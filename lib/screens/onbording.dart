@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:mycar_app/screens/carmodel.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class onBording extends StatefulWidget {
   const onBording({super.key});
@@ -11,6 +12,26 @@ class onBording extends StatefulWidget {
 }
 
 class _onBordingState extends State<onBording> {
+  savepref(bool Value) async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    pref.setBool('value', Value);
+  }
+
+  getpref() async {
+    SharedPreferences pref = await SharedPreferences.getInstance();
+    var state = pref.getBool('value');
+    if (state == false) {
+      Get.to(() => carModel());
+    }
+    print(state);
+  }
+
+  @override
+  void initState() {
+    getpref();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return IntroductionScreen(
@@ -100,13 +121,19 @@ class _onBordingState extends State<onBording> {
       showBackButton: true,
       next: const Text(
         "التالي",
-        style:
-            TextStyle(fontSize: 18, fontFamily: 'Cairo', color: Colors.black),
+        style: TextStyle(
+            fontSize: 18,
+            fontFamily: 'Cairo',
+            color: Colors.black,
+            fontWeight: FontWeight.w400),
       ),
       back: const Text(
         "السابق",
-        style:
-            TextStyle(fontSize: 18, fontFamily: 'Cairo', color: Colors.black),
+        style: TextStyle(
+            fontSize: 18,
+            fontFamily: 'Cairo',
+            color: Colors.black,
+            fontWeight: FontWeight.w400),
       ),
       done: const Text("اضف سيارتك",
           style: TextStyle(
@@ -118,6 +145,7 @@ class _onBordingState extends State<onBording> {
         // On Done button pressed
 
         setState(() {
+          savepref(false);
           Get.to(() => carModel());
         });
       },

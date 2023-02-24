@@ -12,14 +12,17 @@ class carModel extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(255, 17, 0, 114),
         automaticallyImplyLeading: false,
-        elevation: 0,
+        elevation: 1,
         title: Center(
           child: Text(
             'اختر سيارتك',
             style: TextStyle(
-                fontSize: 20, fontFamily: 'Cairo', color: Colors.black),
+                fontSize: 20,
+                fontFamily: 'Cairo',
+                color: Colors.white,
+                fontWeight: FontWeight.w500),
           ),
         ),
       ),

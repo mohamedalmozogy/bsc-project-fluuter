@@ -40,7 +40,7 @@ class _splashVeiwState extends State<splashVeiw> {
               height: 120,
             ),
           ),
-          Text(
+          const Text(
             "!قطع غيار السيارات... ابسط",
             style: TextStyle(
               fontSize: 18,
