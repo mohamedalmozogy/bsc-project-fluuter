@@ -11,7 +11,6 @@ class _kiaState extends State<kia> {
   bool model = false;
   String? value;
   String? year;
-
   bool yearmade = false;
   @override
   Widget build(BuildContext context) {
@@ -82,7 +81,6 @@ class _kiaState extends State<kia> {
                     DropdownMenuItem(child: Text('اوبيروس'), value: 'اوبيروس'),
                     DropdownMenuItem(child: Text('بيكانتو'), value: 'بيكانتو'),
                     DropdownMenuItem(child: Text('ريو'), value: 'سبورتاج'),
-                    DropdownMenuItem(child: Text('سبورتاج'), value: 'سبورتاج'),
                     DropdownMenuItem(child: Text('سبكترا'), value: 'سبكترا'),
                     DropdownMenuItem(child: Text('ستنجر'), value: 'ستنجر'),
                     DropdownMenuItem(child: Text('سورينتو'), value: 'سورينتو'),
@@ -102,8 +100,11 @@ class _kiaState extends State<kia> {
                   onChanged: (val) {
                     model = true;
                     value = val;
-                    print(val);
-                    print('one$value');
+                    try {
+                      val;
+                    } catch (e) {
+                      print('objecteror');
+                    }
                   },
                 ),
               ),

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:mycar_app/screens/carmodel.dart';
-import 'package:mycar_app/screens/carmodel/kia.dart';
+import 'package:mycar_app/screens/account.dart';
+import 'package:mycar_app/screens/signin.dart';
 
 class dashboard extends StatefulWidget {
   String? value;
@@ -92,30 +93,266 @@ class _dashboardState extends State<dashboard> {
         ),
       ),
       endDrawer: Drawer(
+        backgroundColor: Colors.white,
         child: SingleChildScrollView(
           child: Container(
             child: Padding(
-              padding: const EdgeInsets.only(right: 20.0, top: 50),
+              padding: const EdgeInsets.only(top: 50),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text(
-                    'مرحبآ',
-                    style: TextStyle(
-                        fontSize: 22,
-                        fontFamily: 'Cairo',
-                        fontWeight: FontWeight.w500),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 25),
+                    child: Text(
+                      'مرحبآ',
+                      style: TextStyle(
+                          fontSize: 22,
+                          fontFamily: 'Cairo',
+                          fontWeight: FontWeight.w500),
+                    ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Icon(
-                        LineIcons.home,
-                        size: 32,
-                        color: Colors.grey,
+                  SizedBox(height: 30),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            width: 1,
+                            color: Color.fromARGB(255, 230, 230, 230),
+                          ),
+                        ),
                       ),
-                    ],
-                  )
+                      width: double.infinity,
+                      height: 70,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'الرئيسية',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: 'Cairo',
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            SizedBox(width: 6),
+                            Icon(
+                              LineIcons.home,
+                              size: 32,
+                              color: Colors.grey,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(255, 230, 230, 230),
+                        ),
+                      ),
+                    ),
+                    width: double.infinity,
+                    height: 70,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'التنبيهات',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'Cairo',
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(width: 6),
+                          Icon(
+                            LineIcons.bell,
+                            size: 32,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(() => myacountstate());
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        border: Border(
+                          bottom: BorderSide(
+                            width: 1,
+                            color: Color.fromARGB(255, 230, 230, 230),
+                          ),
+                        ),
+                      ),
+                      width: double.infinity,
+                      height: 70,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            Text(
+                              'حسابي',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: 'Cairo',
+                                  fontWeight: FontWeight.w500),
+                            ),
+                            SizedBox(width: 6),
+                            Icon(
+                              Icons.person_outlined,
+                              size: 32,
+                              color: Colors.grey,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(255, 230, 230, 230),
+                        ),
+                      ),
+                    ),
+                    width: double.infinity,
+                    height: 70,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'خدمة العملاء',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'Cairo',
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(width: 6),
+                          Icon(
+                            Icons.chat_bubble_outline,
+                            size: 32,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(255, 230, 230, 230),
+                        ),
+                      ),
+                    ),
+                    width: double.infinity,
+                    height: 70,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'الاسئلة الشائعة',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'Cairo',
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(width: 6),
+                          Icon(
+                            LineIcons.questionCircle,
+                            size: 32,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(255, 230, 230, 230),
+                        ),
+                      ),
+                    ),
+                    width: double.infinity,
+                    height: 70,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'الشروط والاحكام',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'Cairo',
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(width: 6),
+                          Icon(
+                            Icons.list_outlined,
+                            size: 32,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border(
+                        bottom: BorderSide(
+                          width: 1,
+                          color: Color.fromARGB(255, 230, 230, 230),
+                        ),
+                      ),
+                    ),
+                    width: double.infinity,
+                    height: 70,
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            'عن سيارتي',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'Cairo',
+                                fontWeight: FontWeight.w500),
+                          ),
+                          SizedBox(width: 6),
+                          Icon(
+                            LineIcons.car,
+                            size: 32,
+                            color: Colors.grey,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -338,7 +575,7 @@ class _dashboardState extends State<dashboard> {
                   ),
                 ),
               ),
-              height: 480,
+              height: 490,
               width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.all(10.0),
@@ -353,305 +590,349 @@ class _dashboardState extends State<dashboard> {
                           fontWeight: FontWeight.w600),
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'كمبيوات',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                        Spacer(flex: 1),
+                        Container(
+                          height: 430,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'كمبيوات',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/gearbox.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('obj2');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'محركات',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car (1).png',
-                                      height: 60,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('obj2');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'منظومة الوقود',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 4),
+                                      Image.asset(
+                                        'assets/images/fuel.png',
+                                        height: 60,
+                                        width: 45,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'منظومة التكييف',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontFamily: 'Cairo',
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          Text(
+                                            'والتبيريد',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontFamily: 'Cairo',
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/car-radiator.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'منظومة العادم',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/exhaust-pipe.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'قطع الهيكل',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontFamily: 'Cairo',
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          Text(
+                                            '(الخارجية)',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontFamily: 'Cairo',
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(width: 6),
+                                      Image.asset(
+                                        'assets/images/chassis.png',
+                                        height: 60,
+                                        width: 60,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'الاطارات',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/wheel.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Column(
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'كمبيوات',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                        Spacer(flex: 1),
+                        Container(
+                          height: 430,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'محركات',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/car-engine.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('obj2');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'محركات',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car (1).png',
-                                      height: 60,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('obj2');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'منظومة المحرك',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/spark.png',
+                                        height: 60,
+                                        width: 40,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'منظومة الكهرباء',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/alternator.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'منظومة الفرامل',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/disc-brake.png',
+                                        height: 60,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Text(
+                                        'قطع الصالة',
+                                        style: TextStyle(
+                                            fontSize: 15,
+                                            fontFamily: 'Cairo',
+                                            fontWeight: FontWeight.w600),
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/suspension.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                print('object');
-                              },
-                              child: Container(
-                                child: Row(
-                                  children: [
-                                    Text(
-                                      'منظومة المحرك',
-                                      style: TextStyle(
-                                          fontSize: 15,
-                                          fontFamily: 'Cairo',
-                                          fontWeight: FontWeight.w600),
-                                    ),
-                                    SizedBox(width: 2),
-                                    Image.asset(
-                                      'assets/images/car-seat.png',
-                                      height: 45,
-                                      width: 50,
-                                    ),
-                                  ],
+                              GestureDetector(
+                                onTap: () {
+                                  print('object');
+                                },
+                                child: Container(
+                                  child: Row(
+                                    children: [
+                                      Column(
+                                        children: [
+                                          Text(
+                                            'قطع الهيكل',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontFamily: 'Cairo',
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                          Text(
+                                            '(الداخلية)',
+                                            style: TextStyle(
+                                                fontSize: 15,
+                                                fontFamily: 'Cairo',
+                                                fontWeight: FontWeight.w600),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(width: 2),
+                                      Image.asset(
+                                        'assets/images/car-seat.png',
+                                        height: 45,
+                                        width: 50,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
+                        Spacer(flex: 1),
                       ],
                     ),
                   ],
