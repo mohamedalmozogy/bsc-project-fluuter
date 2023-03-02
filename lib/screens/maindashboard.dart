@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:mycar_app/screens/carmodel.dart';
 import 'package:mycar_app/screens/account.dart';
+import 'package:mycar_app/screens/categorys_screen/accessory.dart';
 import 'package:mycar_app/screens/signin.dart';
 
 class dashboard extends StatefulWidget {
@@ -449,7 +450,10 @@ class _dashboardState extends State<dashboard> {
                         Spacer(flex: 1),
                         GestureDetector(
                           onTap: () {
-                            print('obj2');
+                            Get.to(() => accessory(
+                                  value: value,
+                                  year: year,
+                                ));
                           },
                           child: Container(
                             child: Row(
