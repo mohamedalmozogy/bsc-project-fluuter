@@ -1,4 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -8,22 +7,22 @@ import '../../modals/constant.dart';
 import '../../modals/product_list.dart';
 import 'daetels_view.dart';
 
-class Light extends StatefulWidget {
+class tranmetion extends StatefulWidget {
   String? value;
   String? year;
-  Light({
+  tranmetion({
     this.value,
     this.year,
   });
 
   @override
-  State<Light> createState() => _LightState(value, year);
+  State<tranmetion> createState() => _tranmetionState(value, year);
 }
 
-class _LightState extends State<Light> {
+class _tranmetionState extends State<tranmetion> {
   String? value;
   String? year;
-  _LightState(this.value, this.year);
+  _tranmetionState(this.value, this.year);
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +50,7 @@ class _LightState extends State<Light> {
               appBar: AppBar(
                 backgroundColor: Color.fromARGB(255, 17, 0, 114),
                 title: Text(
-                  'الاضاءة والمصابيح',
+                  'كمبيوات',
                   style: TextStyle(
                       fontSize: 22,
                       fontFamily: 'Cairo',
@@ -65,7 +64,7 @@ class _LightState extends State<Light> {
                   appBar: AppBar(
                     backgroundColor: Color.fromARGB(255, 17, 0, 114),
                     title: Text(
-                      'الاضاءة والمصابيح',
+                      'كمبيوات',
                       style: TextStyle(
                           fontSize: 22,
                           fontFamily: 'Cairo',
@@ -214,7 +213,7 @@ class ProductView extends GetxController {
   getCollection() async {
     _loading.value = true;
     await _collectionReference
-        .where(kcategory, isEqualTo: 'الاضاءة والمصابيح')
+        .where(kcategory, isEqualTo: 'كمبيوات')
         .where(kyear, isEqualTo: yearmade)
         .where(kcartype, isEqualTo: carmodal)
         .get()

@@ -128,19 +128,9 @@ class _accessoryState extends State<accessory> {
                                             children: [
                                               Row(
                                                 children: [
-                                                  Text(
-                                                    controller
-                                                        .product[index].contry!,
-                                                    style: TextStyle(
-                                                        fontSize: 13,
-                                                        fontFamily: 'Cairo',
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: Colors.amber),
-                                                  ),
                                                   SizedBox(width: 5),
                                                   Text(
-                                                    'بلد الصنع',
+                                                    'بلد الصنع ${controller.product[index].contry!}',
                                                     style: TextStyle(
                                                         fontSize: 13,
                                                         fontFamily: 'Cairo',
